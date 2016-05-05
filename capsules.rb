@@ -9,11 +9,12 @@ before do
   @messages = YAML.load_file("data/messages.yaml")
 
   account_info = YAML.load_file("data/twilio_auth.yaml")
-  @twilio_sid = @account_info[:account_sid]
-  @token = @account_info[:auth_token]
+  @twilio_sid = account_info[:account_sid]
+  @token = account_info[:auth_token]
 end
 
 get "/" do 
+  send_message(message)
 end
 
 helpers do 
