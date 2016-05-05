@@ -1,23 +1,26 @@
 require "yaml"
 require "twilio-ruby"
+
 require "sinatra"
 require "sinatra/reloader" if development?
 require "tilt/erubis"
 
 before do
-  @account_info = YAML.load_file("data/twilio_auth.yaml")
+  @messages = YAML.load_file("data/messages.yaml")
+
+  account_info = YAML.load_file("data/twilio_auth.yaml")
   @twilio_sid = @account_info[:account_sid]
   @token = @account_info[:auth_token]
 end
 
 get "/" do 
-  @message = "I love you..."
-  send_message(@message)
 end
 
 helpers do 
   def random_message
-
+    # error assertion if no message provided
+    random_key = @messages.keys.sample
+    @messages[random_key]
   end
 
   def send_message(message)
@@ -31,7 +34,5 @@ helpers do
       from: "14255288374",
       body: message
     )
-
-    puts "Message sent"
   end
 end
