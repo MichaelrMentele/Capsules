@@ -14,7 +14,7 @@ before do
 end
 
 get "/" do 
-  send_message(message)
+  send_text(random_message)
 end
 
 helpers do 
@@ -24,7 +24,7 @@ helpers do
     @messages[random_key]
   end
 
-  def send_message(message)
+  def send_text(message)
     client = Twilio::REST::Client.new(
       @twilio_sid,
       @token
