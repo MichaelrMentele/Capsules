@@ -5,8 +5,13 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "tilt/erubis"
 
+configure do
+  enable :sessions
+  set :session_secret, "secret"
+end
+
 before do
-  @messages = YAML.load_file("data/messages.yaml")
+  session[:capsules] ||= []
 
   account_info = YAML.load_file("data/twilio_auth.yaml")
   @twilio_sid = account_info[:account_sid]
@@ -22,18 +27,20 @@ get "/capsules" do
 end
 
 get "/send" do 
+  #require 'pry'; binding.pry;
   send_text(random_message)
+  redirect "/capsules"
 end
 
 post "/capsules" do 
-
+  session[:capsules] << params[:capsule_message]
+  redirect "/capsules"
 end
 
 helpers do 
   def random_message
     # error assertion if no message provided
-    random_key = @messages.keys.sample
-    @messages[random_key]
+    session[:capsules].sample
   end
 
   def send_text(message)
