@@ -14,7 +14,19 @@ before do
 end
 
 get "/" do 
+  redirect "/capsules"
+end
+
+get "/capsules" do 
+  erb :capsules, layout: :layout
+end
+
+get "/send" do 
   send_text(random_message)
+end
+
+post "/capsules" do 
+
 end
 
 helpers do 
