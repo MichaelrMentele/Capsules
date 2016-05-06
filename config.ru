@@ -1,2 +1,2 @@
-require './todo'
+require './capsules'
 run Sinatra::Application

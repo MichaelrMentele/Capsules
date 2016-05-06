@@ -2,8 +2,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.6.6)
+    builder (3.2.2)
     erubis (2.7.0)
+    jwt (1.5.4)
     multi_json (1.11.2)
+    puma (3.4.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -21,14 +24,20 @@ GEM
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
     tilt (2.0.1)
+    twilio-ruby (4.11.1)
+      builder (>= 2.1.2)
+      jwt (~> 1.0)
+      multi_json (>= 1.3.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   erubis
+  puma
   sinatra (~> 1.4.6)
   sinatra-contrib
+  twilio-ruby
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
