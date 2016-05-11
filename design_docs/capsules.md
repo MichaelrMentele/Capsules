@@ -1,16 +1,13 @@
+This is a log to keep track of high level project design decisions.
+
 # Project Decisions
 - Opensource
-
-# Agenda
-- We need clear picture of functionality
-- Clear picture of design or starting point
-- VCS AKA Git (bri up and running)
-- Deadlines
+- Webapp using Sinatra
 
 # Backend Features
 - user accounts
 - data base for messages
-- subscription... payment?
+- subscription
 
 # Frontend Features
 - Home page
