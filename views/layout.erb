@@ -12,18 +12,30 @@
 
 <body>
 
-  <div id="layout">
-      <div id="main">
-        <div class="header">
-          <h1>Capsules</h1>
-          <br>
-        </div>
+  <div id="main">
+    <div class="header">
+      <h1>Capsules</h1>
+      <br>
+    </div>
 
-        <div class="content">
-          <%= yield %>
+    <div class="content">
+      <!-- Display flash messages -->
+      <% if session[:error] %>
+        <div class="flash error">
+          <p><%= session.delete(:error) %></p>
         </div>
-      </div>
+      <% end %>
+      <% if session[:success] %>
+        <div class="flash success">
+          <p><%= session.delete(:success) %></p>
+        </div>
+      <% end %>
+
+      <!-- Yield to specific page content -->
+      <%= yield %>
+    </div>
   </div>
+
 
   <script type="text/javascript" src="javascripts/ui.js"></script>
 </body>
