@@ -38,6 +38,3 @@ DEPENDENCIES
   sinatra (~> 1.4.6)
   sinatra-contrib
   twilio-ruby
-
-BUNDLED WITH
-   1.11.2
