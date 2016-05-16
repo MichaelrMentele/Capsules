@@ -4,21 +4,15 @@ a {
 }
 
 body {
-  font: normal 20px "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Vollkorn', serif;  
+  font-weight: 400;
   color: #3f3f3f;
   background: #ffffff;
-  margin:30px 20% 10px 20%;
 }
 
-body > header {
-  max-width: 1000px;
-  padding: 85px 0 35px 0;
-  margin: 0 auto; 
-}
 
 body > header h1 {
   display: inline-block;
-  width: 38%;
   font-size: 30px;
   color: #dd5f4f; 
   padding: 14px 16px;
@@ -27,7 +21,6 @@ body > header h1 {
 body > header .actions {
   display: inline-block;
   width: 60%;
-  text-align: right; 
 }
 
 body > header .actions a {
@@ -47,10 +40,10 @@ body > header .actions a.add:before {
   margin: 0 7px 0 0;
   vertical-align: -6px;
   content: "";
-  background: transparent url("../images/icon_add.png") 0 0 no-repeat;
+  /*background: transparent url("../images/icon_add.png") 0 0 no-repeat;
   -webkit-transition: transform 200ms linear;
   -moz-transition: transform 200ms linear;
-  -o-transition: transform 200ms linear; 
+  -o-transition: transform 200ms linear;*/ 
 }
 
 body > header .actions a.add:hover:before {
@@ -59,10 +52,10 @@ body > header .actions a.add:hover:before {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
 }
 
-main {
+#main {
   max-width: 1000px;
+  margin:0px 10% 0px 10%;
   padding: 0 0 40px 0;
-  margin: 0 auto; 
 }
 
 main > form {
@@ -95,7 +88,7 @@ form input[type="submit"] {
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  background: #800040;
+  background: #0CB1A0;
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-transition: background-color 200ms ease;
@@ -104,7 +97,7 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #cc0066;
+  background-color: #FF6393;
   cursor: pointer; 
 }
 
@@ -160,22 +153,34 @@ form fieldset.actions a:hover {
 
 /*======BRI======*/
 
+.header {
+  background: #FB2450;
+  text-align: center;
+}
+
+.header h1{
+  font-family: 'Lobster Two', cursive;
+  font-size: 50px;
+  color:#fff;
+  
+}
+
 nav {
-  padding: 20px;
+  padding: 5px;
   overflow: hidden;
+  
 }
 
 nav ul{
   list-style-type:none;
-  float: right;
+  text-align: center;
 }
 
 nav li{
   display: inline;
-  font:"PT Sans", Helvetica, Arial, sans-serif;
-  color:#454040;
+  color:#FFF;
   font-weight:400;
-  font-size:18px;
+  font-size:20px;
   letter-spacing:.07em;
 }
 
@@ -184,14 +189,27 @@ nav li a{
     padding: 14px 16px;
 }
 
+div{
+  margin:5px;
+}
+
+.content{
+  padding-top: 40px;
+}
+
 footer{
-  background-color: #993399;
+  background-color: #FB2450;
   margin-top:15px;
+  position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
   
 }
 
 footer li{
-  font-size:11px;
+  font-size:15px;
   color:#fff;
 
 }
