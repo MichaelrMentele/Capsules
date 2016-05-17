@@ -54,7 +54,7 @@ end
 
 # Redirect to home page
 get "/" do 
-  redirect "/capsules"
+  erb :home, layout: :layout
 end
 
 # Render messaging page

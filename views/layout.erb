@@ -7,7 +7,9 @@
     <title>Capsules</title>
     <link rel="stylesheet" href="/stylesheets/whitespace-reset.css">
     <link rel="stylesheet" href="/stylesheets/application.css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster+Two:700italic|Vollkorn:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/grid.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two:700italic|Vollkorn:400,400italic' rel='stylesheet' type='text/css' ">
 </head>
 
 <body>
@@ -16,7 +18,7 @@
       <h1>Capsules</h1>
      <nav>
         <ul>
-          <li><a href="home.html">Home</a></li>
+          <li><a href="user.html">Home</a></li>
           <li><a href="sent.html">Sent</a></li>
           <li><a href="settings.html">Settings</a></li>
         </ul>
@@ -24,7 +26,7 @@
     </div> 
   </header>
 
-  <div id="main">
+  <div>
     <div class="content">
       <!-- Display flash messages -->
       <% if session[:error] %>
@@ -42,17 +44,16 @@
       <%= yield %>
     </div>
   </div>
-<Footer>
-  <nav id="footer">
+  <script type="text/javascript" src="javascripts/ui.js"></script>
+</body>
+<footer>
+  <nav>
     <ul>
-      <li><a href="home.html">Home</a></li>
+      <li><a href="home.erb">Home</a></li>
       <li><a href="sent.html">Sent</a></li>
       <li><a href="settings.html">Settings</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
   </nav>
-</Footer>
-
-  <script type="text/javascript" src="javascripts/ui.js"></script>
-</body>
+</footer>
 </html>
