@@ -71,6 +71,7 @@ end
 # Add a message to the user's collection
 post "/capsules" do 
   session[:capsules] << params[:capsule_message]
+  session[:success] = "Capsule added successfully"
   redirect "/capsules"
 end
 
@@ -80,6 +81,7 @@ post "/send" do
   # Update to remove from collection and into the 'sent' list
   capsule = random_capsule
   send_text(capsule)
+  session[:success] = "Capsule sent successfully"
 
   message_sent!(capsule)
 
@@ -92,3 +94,4 @@ end
 helpers do 
   
 end
+
