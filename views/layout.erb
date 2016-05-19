@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Capsules</title>
-
-    <link rel="stylesheet" href="/stylesheets/application.css">
     <link rel="stylesheet" href="/stylesheets/whitespace-reset.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/grid.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two:700italic|Vollkorn:400,400italic' rel='stylesheet' type='text/css' ">
 </head>
 
 <body>
-
-  <div id="main">
+  <header>    
     <div class="header">
       <h1>Capsules</h1>
-      <br>
-    </div>
+     <nav>
+        <ul>
+          <li><a href="user.html">Home</a></li>
+          <li><a href="sent.html">Sent</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </div> 
+  </header>
 
+  <div>
     <div class="content">
       <!-- Display flash messages -->
       <% if session[:error] %>
@@ -35,8 +44,16 @@
       <%= yield %>
     </div>
   </div>
-
-
   <script type="text/javascript" src="javascripts/ui.js"></script>
 </body>
+<footer>
+  <nav>
+    <ul>
+      <li><a href="home.erb">Home</a></li>
+      <li><a href="sent.html">Sent</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</footer>
 </html>

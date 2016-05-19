@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Column & Row Setup
+   ========================================================================== */
+
+.col {
+	display: block;
+	float:left;
+	margin: 0 0 0 1.6%;
+}
+
+/* Remove the margin on the first column. Works on all browsers incl. IE7+ */
+.col:first-child { margin-left: 0; }
+
+.row {
+	clear: both;
+	margin: 0 auto;
+	*zoom: 1;
+}
+
+/*takes out margin*/
+.mnone{
+	clear:both;
+	margin:0;	
+}
+
+.row:before,
+.row:after {
+	content: "";
+	display: table;
+}
+
+.row:after { clear: both; }
+
+
+/* ==========================================================================
+   Twelve Column Grid
+   ========================================================================== */
+.grid_13_of_12  {width: 150%;}
+
+.grid_12_of_12  { width: 100%; }
+
+.grid_11_of_12  { width: 91.53%; }
+
+.grid_10_of_12  { width: 83.06%; }
+
+.grid_95_of_12  { width: 77.933%;}
+.grid_9_of_12   { width: 74.6%; }
+
+.grid_85_of_12  { width: 69.473%}
+.grid_8_of_12   { width: 66.13%; }
+
+.grid_7_of_12   { width: 57.66%; }
+
+.grid_65_of_12  { width: 52.53%; }
+.grid_6_of_12   { width: 49.2%; }
+
+.grid_55_of_12  { width: 44.16%; }
+.grid_5_of_12   { width: 40.73%; }
+
+.grid_4_of_12   { width: 32.26%; }
+
+.grid_35_of_12  { width: 27.233%;}
+.grid_3_of_12   { width: 23.8%; }
+
+.grid_25_of_12  { width: 18.763%; }
+.grid_2_of_12   { width: 15.33%; }
+
+.grid_1_of_12   { width: 6.866%; }
+.grid_075_of_12 { width: 5.15%; }
+.grid_05_of_12  { width: 3.433%; }
+.grid_0375_of_12{ width: 2.55%; }
+.grid_025_of_12 { width: 1.717%; }
+.grid_0125_of_12{ width: .85%; }
+
+@media all and (max-width:800px){
+	.grid_13_of_12  {width: 150%;}
+	
+	.grid_12_of_12  { width: 100%; }
+	
+	.grid_11_of_12  { width: 91.53%; }
+	
+	.grid_10_of_12  { width: 83.06%; }
+	
+	.grid_9_of_12   { width: 74.6%; }
+	
+	.grid_8_of_12   { width: 66.13%; }
+	
+	.grid_7_of_12   { width: 57.66%; }
+	
+	.grid_65_of_12  { width: 52.53%; }
+	.grid_6_of_12   { width: 49.2%; }
+
+	.grid_55_of_12  { width: 88.32%; }
+	.grid_5_of_12   { width: 81.46%; }
+
+	.grid_4_of_12   { width: 64.52%; }
+	
+	.grid_3_of_12   { width: 47.6%; }
+	
+	.grid_25_of_12  { width: 37.526%; }
+	
+	.grid_2_of_12   { width: 30.66%; }
+	
+	.grid_1_of_12   { width: 13.732%; }
+	.grid_075_of_12 { width: 10.3%; }
+	.grid_05_of_12  { width: 6.866%; }
+	.grid_0375_of_12{ width: 5.1%; }
+	.grid_025_of_12 { width: 2.342%; }
+	.grid_0125_of_12{ width: 1.7%; }
+}
+    @media all and (max-width:650px){
+	.grid_13_of_12  {width: 100%;}
+	
+	.grid_12_of_12  { width: 100%; }
+	
+	.grid_11_of_12  { width: 100%; }
+	
+	.grid_10_of_12  { width: 100%; }
+	
+	.grid_9_of_12   { width: 100%; }
+	
+	.grid_8_of_12   { width: 100%; }
+	
+	.grid_7_of_12   { width: 100%; }
+	
+	.grid_65_of_12  { width: 100%; }
+	.grid_6_of_12   { width: 100%; }
+	
+	.grid_55_of_12  { width: 100%; }
+	.grid_5_of_12   { width: 100%; }
+	
+	.grid_4_of_12   { width: 100%; }
+	
+	.grid_3_of_12   { width: 100%; }
+	
+	.grid_25_of_12  { width: 100%; }
+	
+	.grid_2_of_12   { width: 100%; }
+	
+	.grid_1_of_12   { width: 100%; }
+	.grid_075_of_12 { width: 5.15%; }
+	.grid_05_of_12  { width: 3.433%; }
+	.grid_0375_of_12{ width: 2.55%; }
+	.grid_025_of_12 { width: 1.717%; }
+	.grid_0125_of_12{ width: .85%; }
+    }
