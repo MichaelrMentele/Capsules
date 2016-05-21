@@ -61,7 +61,7 @@ end
 # Render messaging page
 get "/sent" do 
   @sent_messages = session[:sent]
-  erb :capsules, layout: :layout
+  erb :sent, layout: :layout
 end
 
 #########
