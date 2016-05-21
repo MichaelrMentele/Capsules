@@ -52,14 +52,14 @@ end
 # GETs #
 ########
 
-# Redirect to home page
+# Render home page
 get "/" do 
+  @capsules = session[:capsules]
   erb :home, layout: :layout
 end
 
 # Render messaging page
-get "/capsules" do 
-  @capsules = session[:capsules]
+get "/sent" do 
   @sent_messages = session[:sent]
   erb :capsules, layout: :layout
 end
@@ -72,10 +72,11 @@ end
 post "/capsules" do 
   session[:capsules] << params[:capsule_message]
   session[:success] = "Capsule added successfully"
-  redirect "/capsules"
+  redirect "/"
 end
 
 # !!!
+# FOR DEBUGGING/TESTING ONLY
 # Send a text message
 post "/send" do 
   # Update to remove from collection and into the 'sent' list
@@ -85,7 +86,7 @@ post "/send" do
 
   message_sent!(capsule)
 
-  redirect "/capsules"
+  redirect "/"
 end
 
 ###########

@@ -5,32 +5,43 @@
       <p> </p>    <!-- this is just to make the first 3 columns open/blank -->
     </div>
     
+    <!-- message submission -->
     <div class="col grid_3_of_12">
-      <form>
-            <label>Share the Love:</label>
-            <input name="capsule_message" placeholder="I appreciate..." type="text" value="">
+        <!-- Add new capsules -->
+        <form action="/capsules" method="post">
+          <dl>
+            <dt>
+              <label for="capsule_message">Share the Love:</label>
+            </dt>
+            <dd>
+              <input name="capsule_message" placeholder="I appreciate..." type="text" value="">
+            </dd>
+          </dl>
+          <fieldset class="actions">
+            <input type="submit" value="Add">
+          </fieldset>
+        </form>
        
-        <!--This one should be save to draft-->
+        <!--Save as draft-->
         <fieldset>
-          <input type="submit" value="Save to Drafts">
-        </fieldset>
-       
-        <!--This one should be Ready to dispence!-->
-        <fieldset>
-          <input type="submit" value="Ready to Dispence!">
+          <input type="submit" value="Save">
         </fieldset>
       </form>
-    </div> <!--end message sunmit form-->  
+    </div> <!--end message submission-->  
     
     <div class="col grid_3_of_12">
       <p> </p>    <!-- this is to make the next 3 columns open/blank -->
     </div>
  </div>
 
-<div id="dispencer">
+<div id="dispenser">
   <h1>Dispenser</h1>
-  <!-- This is where the dispenced messages should show up -->
-  <p>ex. message</p>
+  <!-- Display undispensed capsules collection -->
+  <ul>
+    <% @capsules.each do |capsule| %>
+      <li><%= capsule %></li>
+    <% end %>
+  </ul>
 </div>
 
 <div id="drafts">
