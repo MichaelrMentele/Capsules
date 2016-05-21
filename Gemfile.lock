@@ -6,6 +6,7 @@ GEM
     erubis (2.7.0)
     jwt (1.5.4)
     multi_json (1.11.2)
+    pg (0.18.4)
     puma (3.4.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -34,6 +35,7 @@ PLATFORMS
 
 DEPENDENCIES
   erubis
+  pg
   puma
   sinatra (~> 1.4.6)
   sinatra-contrib
