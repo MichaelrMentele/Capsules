@@ -52,16 +52,36 @@ end
 # GETs #
 ########
 
+# !!!
+# Render Splash
+get "/splash" do
+   # Will use a different layout since user is not yet logged in
+   erb :splash, layout: :layout
+end  
+
+# !!!
+# Render Login page
+get "/login" do 
+  # Will use a different layout since user is not yet logged in
+  erb :login, layout: :layout
+end
+
 # Render home page
 get "/" do 
   @capsules = session[:capsules]
   erb :home, layout: :layout
 end
 
-# Render messaging page
+# Render sent messages page
 get "/sent" do 
   @sent_messages = session[:sent]
   erb :sent, layout: :layout
+end
+
+# !!!
+# Render Setting page
+get "/settings" do 
+  erb :settings, layout: :layout
 end
 
 #########
