@@ -7,23 +7,23 @@
     
     <!-- message submission -->
     <div class="col grid_3_of_12">
-        <!-- Add new capsules -->
-        <form action="/capsules" method="post">
-          <dl>
-            <dt>
-              <label for="capsule_message">Share the Love:</label>
-            </dt>
-            <dd>
-              <input name="capsule_message" placeholder="I appreciate..." type="text" value="">
-            </dd>
-          </dl>
-          <fieldset class="actions">
-            <input type="submit" value="Add">
-          </fieldset>
-        </form>
-       
+      <!-- Add new capsules -->
+      <form action="/capsules" method="post">
+        <dl>
+          <dt>
+            <label for="capsule_message">Share the Love:</label>
+          </dt>
+          <dd>
+            <input name="capsule_message" placeholder="I appreciate..." type="text" value="">
+          </dd>
+        </dl>
+
+        <!-- Add to dispenser -->
+        <fieldset class="actions">
+          <input type="submit" value="Add">
+        </fieldset>
         <!--Save as draft-->
-        <fieldset>
+        <fieldset class="actions">
           <input type="submit" value="Save">
         </fieldset>
       </form>
@@ -42,6 +42,7 @@
       </fieldset>
     </form>
     <!-- END TEST -->
+    
     <div class="col grid_3_of_12">
       <p> </p>    <!-- this is to make the next 3 columns open/blank -->
     </div>
