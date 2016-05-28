@@ -177,7 +177,8 @@ header {
 }
 
 nav {
-  padding: 5px;
+  padding: 0px;
+  padding-right:40px;
   overflow: hidden;
 }
 
@@ -195,8 +196,14 @@ nav li{
 }
 
 nav li a{
-    text-align: center;
-    padding: 14px 16px;
+    text-align: inherit;
+    padding: 5px 16px 14px 16px;
+    
+}
+
+nav li a:hover{
+    color:rgba(255,125,126,.65);
+    font-weight:600;
 }
 
 .margin{
