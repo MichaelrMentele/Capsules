@@ -33,10 +33,6 @@ body > header .actions a.add:before {
   margin: 0 7px 0 0;
   vertical-align: -6px;
   content: "";
-  /*background: transparent url("../images/icon_add.png") 0 0 no-repeat;
-  -webkit-transition: transform 200ms linear;
-  -moz-transition: transform 200ms linear;
-  -o-transition: transform 200ms linear;*/ 
 }
 
 body > header .actions a.add:hover:before {
@@ -51,17 +47,17 @@ body > header .actions a.add:hover:before {
 
 
 form dt {
-  padding: 0 0 25px 0; 
+  padding: 0 0 5px 0; 
 }
 
 form dd {
-  padding: 0 0 15px 0; 
+  padding: 0 0 10px 0; 
 }
 
 form input[type="text"] {
   width: 100%;
-  height: 58px;
-  padding: 15px 20px;
+  height: 130px;
+  padding: 10px 0 80px 20px;
   font-family: 'Catamaran', sans-serif;
   font-weight: 200;
   font-size:18px;
@@ -71,25 +67,50 @@ form input[type="text"] {
 }
 
 form input[type="submit"] {
-  padding: 12px 45px;
-  margin: 0 40px 0 0;
+  padding: 3px 30px;
+  margin: 0;
   font-family: 'Catamaran', sans-serif;
-  font-weight:400;
-  font-size:20px;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:.04em;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  background: #0CB1A0;
+  border-radius: 4px;
+  background: #FF7D7E;
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-transition: background-color 200ms ease;
   -moz-transition: background-color 200ms ease;
   -o-transition: background-color 200ms ease; 
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+form .lighter input[type="submit"] {
+  padding: 3px 30px;
+  margin: 0;
+  font-family: 'Catamaran', sans-serif;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:.04em;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255,125,126,.65);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-transition: background-color 200ms ease;
+  -moz-transition: background-color 200ms ease;
+  -o-transition: background-color 200ms ease; 
+  -webkit-transition-duration: 0.4s; /* Safari */
 }
 
 form input[type="submit"]:hover {
-  background-color: #FF6393;
   cursor: pointer; 
+  padding: 0px 27px;
+  color: #666;
+  border: 3px solid rgba(255,125,126,.65);
+  border-radius: 4px;
+  background: #fff;
 }
 
 form fieldset.actions a {
@@ -178,9 +199,41 @@ nav li a{
     padding: 14px 16px;
 }
 
+.margin{
+  margin:40px 0;
+}
+
 label{
   font-family: 'Catamaran', sans-serif;
+  font-weight:400;
   font-size: 20px;
+  margin-left:10px; 
+}
+
+dd{
+  -webkit-margin-start: 5px;
+}
+
+.sidebyside{
+  float:right;
+  clear:both;
+  display:inline-flex;
+}
+
+fieldset{
+  -webkit-margin-start: 4px;
+  -webkit-margin-end: 4px;
+  -webkit-padding-before:0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  -webkit-padding-after: 0; 
+}
+
+dl {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 #dispenser{
@@ -212,7 +265,7 @@ label{
 }
 
 footer{
-  background-color: #FB2450;
+  background-color: #C73D56;
   position:fixed;
     left:0px;
     bottom:0px;

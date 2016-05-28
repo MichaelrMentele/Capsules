@@ -1,8 +1,8 @@
 
 <!-- user home page layout -->
-<div class="row">
-    <div class="col grid_3_of_12">
-      <p> </p>    <!-- this is just to make the first 3 columns open/blank -->
+<div class="row margin">
+    <div class="col grid_2_of_12">
+      <p> </p>    <!-- this is just to make the first 2 columns open/blank -->
     </div>
     
     <!-- message submission -->
@@ -17,18 +17,21 @@
             <input name="capsule_message" placeholder="I appreciate..." type="text" value="">
           </dd>
         </dl>
-
-        <!-- Add to dispenser -->
-        <fieldset class="actions">
-          <input type="submit" value="Add">
-        </fieldset>
+        
+        <div class="sidebyside">
         <!--Save as draft-->
-        <fieldset class="actions">
-          <input type="submit" value="Save">
+        <fieldset class="actions lighter">
+          <input type="submit" value="Save to Drafts">
         </fieldset>
+        <!-- Add to dispenser -->
+        <fieldset class="actions ">
+          <input type="submit" value="Add to dispenser">
+        </fieldset>
+        </div>
       </form>
     </div> <!--end message submission-->  
     
+    <div class="col grid_3_of_12">
     <!-- FOR TESTING PURPOSES ONLY -->
      <!-- Send a random Capsule -->
     <form action="/send" method="post">
@@ -42,9 +45,6 @@
       </fieldset>
     </form>
     <!-- END TEST -->
-    
-    <div class="col grid_3_of_12">
-      <p> </p>    <!-- this is to make the next 3 columns open/blank -->
     </div>
  </div>
 
