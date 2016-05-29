@@ -1,0 +1,36 @@
+<!-- user registration submission -->
+<div class="col grid_3_of_12">
+  <!-- Add new user -->
+  <form action="/register" method="post">
+    <dl>
+      <dt>
+        <label for="username">Username:</label>
+      </dt>
+      <dd>
+        <input name="username" placeholder="Seneca" type="text" value="">
+      </dd>
+
+      <dt>
+        <label for="password">Password:</label>
+      </dt>
+      <dd>
+        <input name="password" placeholder="secret" type="text" value="">
+      </dd>
+    </dl>
+
+    <!-- Add to user db -->
+    <fieldset class="actions ">
+      <input type="submit" value="Register">
+    </fieldset>
+  </form>
+</div> <!--end user registration submission-->  
+
+<h3>Proud Users...</h3>
+<ul>
+  <% @users.each do |user|%>
+    <li>
+      <%= user.username %>
+      <%= user.password %>
+    </li>
+  <% end %>
+</ul>

@@ -5,6 +5,8 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "tilt/erubis"
 
+require "./models/model"
+
 configure do
   enable :sessions
   set :session_secret, "secret"
@@ -37,6 +39,7 @@ def send_text(message)
     @token
   )
 
+  # !!! This needs to be dynamic
   client.messages.create(
     to: "12066184282",
     from: "14255288374",
@@ -55,16 +58,21 @@ end
 # !!!
 # Render Splash
 get "/splash" do
-   # Will use a different layout since user is not yet logged in
-   erb :splash, layout: :layout
+   erb :splash, layout: :layout # !!! Use layout 2
 end  
 
 # !!!
 # Render Login page
 get "/login" do 
-  # Will use a different layout since user is not yet logged in
-  erb :login, layout: :layout
+  erb :login, layout: :layout # !!! Use layout 2
 end
+
+# !!!
+# Render Registration page
+get "/register" do 
+  @users = User.all
+  erb :register, layout: :layout # !!! Use layout 2
+end 
 
 # Render home page
 get "/" do 
@@ -88,11 +96,22 @@ end
 # POSTs #
 #########
 
+# Register a new user
+post "/register" do
+  newbie = User.new 
+  newbie.username = params[:username]
+  newbie.password = params[:password]
+  newbie.save
+
+  session[:success] = "You are logged in!" # !!! Should display username
+  redirect "/" 
+end
+
 # Add a message to the user's collection
 post "/capsules" do 
   session[:capsules] << params[:capsule_message]
   session[:success] = "Capsule added successfully"
-  redirect "/"
+  redirect "/register"
 end
 
 # !!!
