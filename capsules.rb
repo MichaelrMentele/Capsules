@@ -51,6 +51,15 @@ def message_sent!(capsule)
   session[:sent] << session[:capsules].delete(capsule)
 end
 
+def logged_in?
+  !!session[:user]
+end
+
+def please_login
+  session[:error] = "You are not logged in. Please login or register."
+  redirect "/login"
+end
+
 ########
 # GETs #
 ########
@@ -74,22 +83,36 @@ get "/register" do
   erb :register, layout: :layout # !!! Use layout 2
 end 
 
+### Requires User ###
+
 # Render home page
 get "/" do 
-  @capsules = session[:capsules]
-  erb :home, layout: :layout
+  if logged_in?
+    @capsules = session[:capsules]
+    erb :home, layout: :layout
+  else
+    please_login
+  end
 end
 
 # Render sent messages page
 get "/sent" do 
-  @sent_messages = session[:sent]
-  erb :sent, layout: :layout
+  if logged_in?
+    @sent_messages = session[:sent]
+    erb :sent, layout: :layout
+  else
+    please_login
+  end
 end
 
 # !!!
 # Render Setting page
 get "/settings" do 
-  erb :settings, layout: :layout
+  if logged_in?
+    erb :settings, layout: :layout
+  else
+    please_login
+  end
 end
 
 #########
