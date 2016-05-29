@@ -54,48 +54,29 @@ form dd {
   padding: 0 0 10px 0; 
 }
 
-form input[type="text"] {
+form input[type="text"]{
   width: 100%;
-  height: 130px;
-  padding: 10px 0 80px 20px;
+  height: 40px;
+  padding: 5px 0 5px 5px;
   font-family: 'Catamaran', sans-serif;
   font-weight: 200;
   font-size:18px;
   border: 1px solid #f2f2f2;
-  border-radius: 8px;
+  border-radius: 4px;
   box-sizing: border-box; 
 }
 
 form input[type="submit"] {
-  padding: 3px 30px;
+  padding: 3px 25px;
   margin: 0;
   font-family: 'Catamaran', sans-serif;
   font-weight:600;
-  font-size:18px;
+  font-size:16px;
   letter-spacing:.04em;
   color: #ffffff;
   border: none;
   border-radius: 4px;
   background: #FF7D7E;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-transition: background-color 200ms ease;
-  -moz-transition: background-color 200ms ease;
-  -o-transition: background-color 200ms ease; 
-  -webkit-transition-duration: 0.4s; /* Safari */
-}
-
-form .lighter input[type="submit"] {
-  padding: 3px 30px;
-  margin: 0;
-  font-family: 'Catamaran', sans-serif;
-  font-weight:600;
-  font-size:18px;
-  letter-spacing:.04em;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  background: rgba(255,125,126,.65);
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-transition: background-color 200ms ease;
@@ -248,16 +229,30 @@ dl {
   background-color: #f1f1f1;
   text-align: center;
   color:#474141;
-  position: absolute;
-    right:0;
-    bottom:0;
-    top:143px;
-  width:27.233%;
+  /*position: absolute;*/
+  /*  right:0;*/
+  /*  bottom:0;*/
+  /*  top:143px;*/
+  /*width:27.233%;*/
 }
 
 #dispenser h2{
   font-weight:400;
   font-size: 20px;
+  margin:0;
+}
+
+#line img{
+  padding-left:30px;
+
+}
+
+.drafts{
+  padding-top:50px;
+}
+.drafts h1{
+  font-size: 20px;
+  font-weight: 400;
 }
 
 #drafts{
@@ -268,7 +263,6 @@ dl {
   background-color: #EC92FF;
   text-align: center;
   color:#fff;
-  
 }
 
 footer{
@@ -294,3 +288,4 @@ footer li{
   padding:0 15px;
 
 }
+
