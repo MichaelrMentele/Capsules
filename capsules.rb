@@ -107,6 +107,22 @@ post "/register" do
   redirect "/" 
 end
 
+# Login a registered user
+post "/login" do
+  @users = User.all
+  username_attempt = params[:username]
+  password_attempt = params[:password]
+  @users.each do |user|
+    if user.username == username_attempt and user.password == password_attempt
+      session[:user] = user.username
+      session[:success] = "Welcome #{user.username}!"
+      redirect "/"
+    end
+  end
+  session[:error] = "Sorry, wrong info bro."
+  redirect "/login"
+end
+
 # Add a message to the user's collection
 post "/capsules" do 
   session[:capsules] << params[:capsule_message]

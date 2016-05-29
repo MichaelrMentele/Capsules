@@ -45,6 +45,9 @@ body > header .actions a.add:hover:before {
   margin-top: 1.5em; 
 }
 
+.flash {
+  background: lightyellow;
+}
 
 form dt {
   padding: 0 0 5px 0; 
@@ -143,8 +146,6 @@ form fieldset.actions a:hover {
   float: right;
   color: #666666; 
 }
-
-/*======BRI======*/
 
 header {
   background: #FFF;
