@@ -89,6 +89,7 @@ end
 get "/" do 
   if logged_in?
     @capsules = session[:capsules]
+    @sent_messages = session[:sent]
     erb :home, layout: :layout
   else
     please_login
@@ -98,7 +99,7 @@ end
 # Render sent messages page
 get "/sent" do 
   if logged_in?
-    @sent_messages = session[:sent]
+    
     erb :sent, layout: :layout
   else
     please_login
