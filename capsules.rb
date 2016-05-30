@@ -52,7 +52,7 @@ def message_sent!(capsule)
 end
 
 def logged_in?
-  !!session[:user]
+  !!session[:username]
 end
 
 def please_login
@@ -88,19 +88,13 @@ end
 # Render home page
 get "/" do 
   if logged_in?
-    @capsules = session[:capsules]
+    # !!! How are capsules being stored now?
+    username = session[:username]
+    user = User.first(:username => username)
+    @capsules = user.capsules.all
+    
     @sent_messages = session[:sent]
     erb :home, layout: :layout
-  else
-    please_login
-  end
-end
-
-# Render sent messages page
-get "/sent" do 
-  if logged_in?
-    
-    erb :sent, layout: :layout
   else
     please_login
   end
@@ -116,6 +110,17 @@ get "/settings" do
   end
 end
 
+###########
+# TESTING #
+###########
+
+get "/debug" do
+  username = session[:username]
+  user = User.first(:username => username)
+  @capsules = user.capsules.all
+  erb :debug, layout: :layout
+end
+
 #########
 # POSTs #
 #########
@@ -127,6 +132,7 @@ post "/register" do
   newbie.password = params[:password]
   newbie.save
 
+  session[:username] = newbie.username 
   session[:success] = "You are logged in!" # !!! Should display username
   redirect "/" 
 end
@@ -136,9 +142,10 @@ post "/login" do
   @users = User.all
   username_attempt = params[:username]
   password_attempt = params[:password]
+
   @users.each do |user|
     if user.username == username_attempt and user.password == password_attempt
-      session[:user] = user.username
+      session[:username] = user.username
       session[:success] = "Welcome #{user.username}!"
       redirect "/"
     end
@@ -149,7 +156,17 @@ end
 
 # Add a message to the user's collection
 post "/capsules" do 
-  session[:capsules] << params[:capsule_message]
+
+  require 'pry'; binding.pry;
+
+  # get current user
+  username = session[:username]
+  user = User.first(:username => username)
+
+  # add capsule to user
+  message = params[:capsule_message]
+  user.capsules.create(:message => message)
+
   session[:success] = "Capsule added successfully"
   redirect "/register"
 end

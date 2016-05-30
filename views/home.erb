@@ -56,18 +56,19 @@
     <p>  </p>
     </div> 
  
-  <div class="col grid_3_of_12" id="dispenser">
+<div class="col grid_3_of_12" id="dispenser">
 <!--<div id="dispenser">-->
   <h2>Dispenser</h2>
   <!-- Display undispensed capsules collection -->
   <ul>
     <% @capsules.each do |capsule| %>
-      <li><%= capsule %></li>
+      <li><%= capsule.message %></li>
     <% end %>
   </ul>
 </div>
 </div>
 
+<!-- Display drafted messages -->
 <div class="row drafts">
     <div class="col grid_2_of_12">
       <p> </p>    <!-- this is just to make the first 2 columns open/blank -->
