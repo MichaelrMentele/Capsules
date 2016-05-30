@@ -1,91 +1,50 @@
-
-<!-- user home page layout -->
-<div class="row margin">
-    <div class="col grid_2_of_12">
-      <p> </p>    <!-- this is just to make the first 2 columns open/blank -->
-    </div>
+<!-- Add new capsules -->
+<form  class="class" id="capsule_creator" action="/capsules" method="post">
+  <dl>
+    <dt>
+      <label for="capsule_message">Share the Love:</label>
+    </dt>
+    <dd>
+      <!-- !!! Our motto for messages is short and sweet... (limit to 100 characters) -->
+      <input name="capsule_message" placeholder="I appreciate..." type="text" value="">
+    </dd>
+  </dl>
+  
+  <!-- message submission -->
+  <div class="sidebyside">
+    <!--Save as draft-->
+    <fieldset class="actions">
+      <input type="submit" value="Save to Drafts">
+    </fieldset>
+    <!-- Add to dispenser -->
+    <fieldset class="actions ">
+      <input type="submit" value="Add to dispenser">
+    </fieldset>
+  </div>
+</form> 
     
-    <!-- message submission -->
-    <div class="col grid_3_of_12">
-      <!-- Add new capsules -->
-      <form action="/capsules" method="post">
-        <dl>
-          <dt>
-            <label for="capsule_message">Share the Love:</label>
-          </dt>
-          <dd>
-            <!-- !!! Our motto for messages is short and sweet... (limit to 100 characters) -->
-            <input name="capsule_message" placeholder="I appreciate..." type="text" value="">
-          </dd>
-        </dl>
-        
-        <div class="sidebyside">
-        <!--Save as draft-->
-        <fieldset class="actions">
-          <input type="submit" value="Save to Drafts">
-        </fieldset>
-        <!-- Add to dispenser -->
-        <fieldset class="actions ">
-          <input type="submit" value="Add to dispenser">
-        </fieldset>
-        </div>
-      </form>
-    </div> <!--end message submission-->  
-
-    <div class="col grid_1_of_12">
-    <p>  </p>
-    </div>
-    
-    <div class="col grid_2_of_12">
-    <!-- FOR TESTING PURPOSES ONLY -->
-     <!-- Send a random Capsule -->
-    <form action="/send" method="post">
-      <dl>
-        <dt>
-          <label for="capsule_message">Send a dose of love?</label>
-        </dt>
-      </dl>
-      <fieldset class="actions">
-        <input type="submit" value="Dose Them!">
-      </fieldset>
-    </form>
-    <!-- END TEST -->
-    </div>
-    
-    <div class="col grid_1_of_12">
-    <p>  </p>
-    </div> 
- 
-<div class="col grid_3_of_12" id="dispenser">
-<!--<div id="dispenser">-->
+<!-- Display undispensed capsules collection -->
+<div class="chunk" id="dispenser">
   <h2>Dispenser</h2>
-  <!-- Display undispensed capsules collection -->
   <ul>
     <% @capsules.each do |capsule| %>
       <li><%= capsule.message %></li>
     <% end %>
   </ul>
 </div>
-</div>
 
 <!-- Display drafted messages -->
-<div class="row drafts">
-    <div class="col grid_2_of_12">
-      <p> </p>    <!-- this is just to make the first 2 columns open/blank -->
-    </div>
-    
-    <!-- drafts-->
-    <div class="col grid_3_of_12">
-    <!--<div id="drafts">-->
-      <h1>Drafts</h1>
-      <!--drafts to go here-->
-      <p>example draft</p>
-    </div>
+<div class="chunk" id="drafts">   
+  <h1>Drafts</h1>
+  <!--drafts to go here-->
+  <p>example draft</p>
 </div>
 
 <!-- Display sent capsules -->
-<ul>
-  <% @sent_messages.each do |sent_message| %>
-    <li><%= sent_message %></li>
-  <% end %>
-</ul>
+<div class="chunk" id="sent">
+  <ul>
+    <% @sent_messages.each do |sent_message| %>
+      <li><%= sent_message %></li>
+    <% end %>
+  </ul>
+</div>

@@ -6,10 +6,12 @@
 
     <title>Capsules</title>
     <link rel="stylesheet" href="/stylesheets/whitespace-reset.css">
-    <link rel="stylesheet" href="/stylesheets/grid.css">
+    <link rel="stylesheet" href="/stylesheets/common_styles.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
     <link rel="stylesheet" href="/stylesheets/application.css">
-    
-    <link href='https://fonts.googleapis.com/css?family=Catamaran:200,400,600,700' rel='stylesheet' type='text/css'></head>
+
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:200,400,600,700' rel='stylesheet' type='text/css'>
+</head>
 
 <body>
   <header>    
@@ -25,25 +27,24 @@
     </div> 
   </header>
 
-  <div>
-    <div class="content">
-      <!-- Display flash messages -->
-      <% if session[:error] %>
-        <div class="flash error">
-          <p><%= session.delete(:error) %></p>
-        </div>
-      <% end %>
-      <% if session[:success] %>
-        <div class="flash success">
-          <p><%= session.delete(:success) %></p>
-        </div>
-      <% end %>
-
-      <!-- Yield to specific page content -->
-      <%= yield %>
-    </div>
+  <div class="flash">
+    <!-- Display flash messages -->
+    <% if session[:error] %>
+      <div class="error">
+        <p><%= session.delete(:error) %></p>
+      </div>
+    <% end %>
+    <% if session[:success] %>
+      <div class="success">
+        <p><%= session.delete(:success) %></p>
+      </div>
+    <% end %>
   </div>
-  <script type="text/javascript" src="javascripts/ui.js"></script>
+
+  <div class="content">
+    <!-- Yield to specific page content -->
+    <%= yield %>
+  </div>
 </body>
 <footer>
   <nav>
