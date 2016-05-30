@@ -64,19 +64,19 @@ end
 # GETs #
 ########
 
-# !!!
+# !!! Needs styling
 # Render Splash
 get "/splash" do
    erb :splash, layout: :layout_no_auth # !!! Use layout 2
 end  
 
-# !!!
+# !!! Needs styling
 # Render Login page
 get "/login" do 
   erb :login, layout: :layout_no_auth # !!! Use layout 2
 end
 
-# !!!
+# !!! Needs styling
 # Render Registration page
 get "/register" do 
   @users = User.all
