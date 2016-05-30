@@ -11,11 +11,7 @@
   margin:0;
 }
 
-.drafts{
-  padding-top:50px;
-}
-
-.drafts h1{
+#drafts h1 {
   font-size: 20px;
   font-weight: 400;
 }
@@ -24,4 +20,5 @@
   background-color: #EC92FF;
   text-align: center;
   color:#fff;
+  padding-top:50px;
 }

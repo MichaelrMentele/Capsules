@@ -1,3 +1,11 @@
+body {
+  font-family: 'Catamaran', sans-serif;  
+  font-weight: 400;
+  color: #3f3f3f;
+  background: #ffffff;
+  margin:0;
+}
+
 header {
   background: #FFF;
   text-align: center;
@@ -43,26 +51,13 @@ nav li a:hover{
   background: lightyellow;
 }
 
-body {
-  font-family: 'Catamaran', sans-serif;  
-  font-weight: 400;
-  color: #3f3f3f;
-  background: #ffffff;
-  margin:0;
-}
-
 .content {
   margin: 0 auto;
   width: 680px;
 }
 
 footer{
-  background-color: #C73D56;
-  position:fixed;
-    left:0px;
-    bottom:0px;
-    height:27px;
-    width:100%;
+  background-color: #fff;
   text-align: center;
   letter-spacing:.05em;
   padding:5px;
@@ -73,8 +68,30 @@ footer ul{
 }
 
 footer li{
-  font-size:16px;
-  color:#fff;
+  font-size: 1em;
+  color:rgba(255,125,126,.65);
   display:inline-block;
-  padding:0 15px;
+  padding:0 10px;
 }
+
+/* !!! Do we want social media links? */
+/*footer a.social {
+  display: block;
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  background: transparent url("../assets/icons_social-media.png") 0 0 no-repeat;
+}
+
+/*Shift shared image*/
+#facebook {
+    background-position: 0 -46px;
+}
+
+#mail {
+    background-position: 0 -92px;
+}
+
+#instagram {
+    background-position: 0 -138px;
+}*/

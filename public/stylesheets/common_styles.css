@@ -22,6 +22,18 @@ form dd {
   padding: 0 0 10px 0; 
 }
 
+form textarea{
+  width: 100%;
+  height: 130px;
+  padding: 5px 0 20px 5px;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 200;
+  font-size:17px;
+  border: 1px solid #f2f2f2;
+  border-radius: 8px;
+  box-sizing: border-box; 
+}
+
 form input[type="text"]{
   width: 100%;
   height: 40px;
@@ -55,7 +67,6 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
   cursor: pointer; 
-  /*padding: 0px 27px;*/
   color: #666;
   border: 3px solid rgba(255,125,126,.65);
   border-radius: 4px;
@@ -78,12 +89,17 @@ label{
   margin-left:10px; 
 }
 
+.logo {
+  padding-bottom:10px;
+  margin:5px;
+}
+
 .sidebyside{
   float:right;
   clear:both;
   display:inline-flex;
 }
 
-.chunk {
+.section {
   width: 100%;
 }
