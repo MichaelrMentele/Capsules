@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Capsules</title>
+    <link rel="stylesheet" href="/stylesheets/whitespace-reset.css">
+    <link rel="stylesheet" href="/stylesheets/grid.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:200,400,600,700' rel='stylesheet' type='text/css'></head>
+
+<body>
+  <header>    
+    <div class="logo">
+      <img src="../assets/logo-header-darkpink.png" alt="Capsules">
+     <nav>
+        <ul>
+        </ul>
+      </nav>
+    </div> 
+  </header>
+
+  <div>
+    <div class="content">
+      <!-- Display flash messages -->
+      <% if session[:error] %>
+        <div class="flash error">
+          <p><%= session.delete(:error) %></p>
+        </div>
+      <% end %>
+      <% if session[:success] %>
+        <div class="flash success">
+          <p><%= session.delete(:success) %></p>
+        </div>
+      <% end %>
+
+      <!-- Yield to specific page content -->
+      <%= yield %>
+    </div>
+  </div>
+  <script type="text/javascript" src="javascripts/ui.js"></script>
+</body>
+<footer>
+  <nav>
+    <ul>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+      <li><a href="/splash">About</a></li>
+    </ul>
+  </nav>
+</footer>
+</html>

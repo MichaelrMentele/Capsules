@@ -67,20 +67,20 @@ end
 # !!!
 # Render Splash
 get "/splash" do
-   erb :splash, layout: :layout # !!! Use layout 2
+   erb :splash, layout: :layout_no_auth # !!! Use layout 2
 end  
 
 # !!!
 # Render Login page
 get "/login" do 
-  erb :login, layout: :layout # !!! Use layout 2
+  erb :login, layout: :layout_no_auth # !!! Use layout 2
 end
 
 # !!!
 # Render Registration page
 get "/register" do 
   @users = User.all
-  erb :register, layout: :layout # !!! Use layout 2
+  erb :register, layout: :layout_no_auth # !!! Use layout 2
 end 
 
 ### Requires User ###
@@ -92,7 +92,7 @@ get "/" do
     username = session[:username]
     user = User.first(:username => username)
     @capsules = user.capsules.all
-    
+
     @sent_messages = session[:sent]
     erb :home, layout: :layout
   else
