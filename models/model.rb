@@ -13,7 +13,7 @@ class User
   property :email, String
 
   has n, :capsules
-  has 1, :lover
+  has n, :lovers
 end
 
 class Capsule
@@ -21,6 +21,7 @@ class Capsule
 
   property :id, Serial
   property :message, Text, :required => true
+  property :sent, Boolean, :default => false
   property :emoji, String
 
   belongs_to :user, :required => true

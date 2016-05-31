@@ -16,6 +16,7 @@ before do
   session[:capsules] ||= []
   session[:sent] ||= []
 
+  # !!! NEEDS ENCRPYTION ADD TO MODELS AND DB
   # Load Twilio account auth info
   account_info = YAML.load_file("data/twilio_auth.yaml")
   @twilio_sid = account_info[:account_sid]
@@ -29,11 +30,15 @@ end
 # !!!
 def random_capsule
   # error assertion if no message in session
-  session[:capsules].sample
+  # !!! Needs to remove from capsules and append to 'sent'
+  user = find_user
+  user.capsules.sample.message
 end
 
 # Send text via Twilio API
 def send_text(message)
+  user = find_user
+
   client = Twilio::REST::Client.new(
     @twilio_sid,
     @token
@@ -41,12 +46,25 @@ def send_text(message)
 
   # !!! This needs to be dynamic
   client.messages.create(
-    to: "12066184282",
+    to: user.lovers[0].phone,
+    from: "14255288374",
+    body: message
+  )
+
+  # !!! FOR TESTING PURPOSES!!!
+  client.messages.create(
+    to: "2066184282",
     from: "14255288374",
     body: message
   )
 end
 
+def find_user
+  username = session[:username]
+  User.first(:username => username)
+end
+
+# !!! NEEDS TO BE INCLUDED IN MODEL
 def message_sent!(capsule)
   session[:sent] << session[:capsules].delete(capsule)
 end
@@ -110,30 +128,22 @@ get "/settings" do
   end
 end
 
-###########
-# TESTING #
-###########
-
-get "/debug" do
-  username = session[:username]
-  user = User.first(:username => username)
-  @capsules = user.capsules.all
-  erb :debug, layout: :layout
-end
-
 #########
 # POSTs #
 #########
 
 # Register a new user
 post "/register" do
-  newbie = User.new 
-  newbie.username = params[:username]
-  newbie.password = params[:password]
-  newbie.save
+  user = User.new 
+  user.username = params[:username]
+  user.password = params[:password]
+  user.save
 
-  session[:username] = newbie.username 
-  session[:success] = "You are logged in!" # !!! Should display username
+  user.lovers.create(:name => params[:lover_name], :phone => params[:lover_phone])
+  user.save
+
+  session[:username] = user.username 
+  session[:success] = "You are logged in #{user.username}!" # !!! Should display username
   redirect "/" 
 end
 
@@ -156,17 +166,51 @@ end
 
 # Add a message to the user's collection
 post "/capsules" do 
-
-  # get current user
-  username = session[:username]
-  user = User.first(:username => username)
+  user = find_user
 
   # add capsule to user
   message = params[:capsule_message]
   user.capsules.create(:message => message)
+  user.save
 
   session[:success] = "Capsule added successfully"
-  redirect "/register"
+  redirect "/"
+end
+
+
+# Update user settings
+post "/update_user_info/:property" do
+  user = find_user
+
+  # Update User info
+  property = params[:property].to_sym
+
+  if property == :lover
+    user.lovers[0].update(:phone => params[:lover_phone],
+                      :name  => params[:lover_name])
+  else
+    user.update(property => params[property])
+  end
+
+  redirect "/settings"
+end
+
+###########
+# Helpers #
+###########
+helpers do 
+  
+end
+
+###########
+# TESTING #
+###########
+
+get "/debug" do
+  username = session[:username]
+  @user = User.first(:username => username)
+  @capsules = @user.capsules.all
+  erb :debug, layout: :layout
 end
 
 # !!!
@@ -182,11 +226,3 @@ post "/send" do
 
   redirect "/"
 end
-
-###########
-# Helpers #
-###########
-helpers do 
-  
-end
-
