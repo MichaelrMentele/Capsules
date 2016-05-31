@@ -19,30 +19,29 @@
       <img src="../assets/logo-header-darkpink.png" alt="Capsules">
      <nav>
         <ul>
-          <li><a href="/">Add</a></li>
-          <li><a href="/sent">Dispenser</a></li>
-          <li><a href="/settings">Drafts</a></li>
-          <li><a href="/settings">Sent</a></li>
+          <li><a href="#add_capsules">Add</a></li>
+          <li><a href="#dispenser">Dispenser</a></li>
+          <li><a href="#drafts">Drafts</a></li>
+          <li><a href="#sent">Sent</a></li>
         </ul>
       </nav>
     </div> 
   </header>
 
-  <div class="flash">
-    <!-- Display flash messages -->
-    <% if session[:error] %>
-      <div class="error">
-        <p><%= session.delete(:error) %></p>
-      </div>
-    <% end %>
-    <% if session[:success] %>
-      <div class="success">
-        <p><%= session.delete(:success) %></p>
-      </div>
-    <% end %>
-  </div>
-
   <div class="content">
+    <div class="flash">
+      <!-- Display flash messages -->
+      <% if session[:error] %>
+        <div class="error">
+          <p><%= session.delete(:error) %></p>
+        </div>
+      <% end %>
+      <% if session[:success] %>
+        <div class="success">
+          <p><%= session.delete(:success) %></p>
+        </div>
+      <% end %>
+    </div>
     <!-- Yield to specific page content -->
     <%= yield %>
   </div>

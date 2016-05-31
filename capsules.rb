@@ -157,8 +157,6 @@ end
 # Add a message to the user's collection
 post "/capsules" do 
 
-  require 'pry'; binding.pry;
-
   # get current user
   username = session[:username]
   user = User.first(:username => username)
