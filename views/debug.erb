@@ -1,0 +1,37 @@
+<!-- FOR TESTING PURPOSES ONLY -->
+<!-- Display user info -->
+<h2>User Info</h2>
+<ul>
+  <li>Name: <%= @user.username %></li>
+  <li>Password: <%= @user.password %></li>
+  <li>Phone: <%= @user.phone %></li>
+  <li>Email: <%= @user.email %></li>
+</ul>
+
+<h2>Lover Info</h2>
+<ul>
+  <li>Name: <%= @user.lovers[0].name %></li>
+  <li>Phone: <%= @user.lovers[0].phone %></li>
+</ul>
+
+<h2>User Capsules</h2>
+<!-- Display user capsules -->
+<ul>
+  <% @capsules.each do |capsule| %>
+    <li><%= capsule.message %></li>
+  <% end %>
+</ul>
+
+<h2>Dispenser</h2>
+<!-- Send a random Capsule -->
+<form action="/send" method="post">
+  <dl>
+    <dt>
+      <label for="capsule_message">Send a dose of love?</label>
+    </dt>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Dose Them!">
+  </fieldset>
+</form>
+<!-- END TEST -->
