@@ -1,7 +1,7 @@
 require 'data_mapper'
 require 'bcrypt'
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] "sqlite3://#{Dir.pwd}/users.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/users.db")
 
 class User
   include DataMapper::Resource
