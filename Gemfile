@@ -5,6 +5,11 @@ ruby "2.2.0"
 group :production do 
   gem "pg"
   gem "puma"
+  gem 'dm-postgres-adapter'
+end
+
+group :development do
+  gem 'dm-sqlite-adapter'
 end
 
 gem "sinatra", "~>1.4.6"
