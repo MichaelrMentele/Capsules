@@ -28,7 +28,7 @@
     </div> 
   </header>
 
-  <div class="content">
+  <main>
     <div class="flash">
       <!-- Display flash messages -->
       <% if session[:error] %>
@@ -44,7 +44,7 @@
     </div>
     <!-- Yield to specific page content -->
     <%= yield %>
-  </div>
+  </main>
 </body>
 <footer>
   <nav>
