@@ -22,6 +22,7 @@ class Capsule
   property :id, Serial
   property :message, Text, :required => true
   property :sent, Boolean, :default => false
+  property :draft, Boolean, :default => false
   property :emoji, String
 
   belongs_to :user, :required => true

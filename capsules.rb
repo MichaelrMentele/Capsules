@@ -107,11 +107,10 @@ end
 get "/" do 
   if logged_in?
     # !!! How are capsules being stored now?
-    username = session[:username]
-    user = User.first(:username => username)
+    user = find_user
     @capsules = user.capsules.all
-
-    @sent_messages = session[:sent]
+    @drafts = @capsules.select { |capsule| capsule.draft }
+    @sent_messages = @capsules.select { |capsule| capsule.sent }
     erb :home, layout: :layout
   else
     please_login
