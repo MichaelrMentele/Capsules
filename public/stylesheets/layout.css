@@ -1,6 +1,11 @@
+body * {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Catamaran', sans-serif;  
-  font-weight: 400;
+  font-weight: 4000;
+  font-size: 1.2em;
   color: #3f3f3f;
   background: #ffffff;
   margin:0;
@@ -8,7 +13,7 @@ body {
 
 main {
   margin: 0 auto;
-  width: 680px;
+  width: 550px;
 }
 
 header {
@@ -50,15 +55,20 @@ nav li a:hover{
   background: lightyellow;
 }
 
-footer{
-  background-color: #fff;
-  text-align: center;
-  letter-spacing:.05em;
-  padding:5px;
+footer {
+  padding: 30px;
 }
 
 footer ul{
-  margin:5px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  letter-spacing:.05em;
+  padding:5px;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 footer li{
@@ -67,25 +77,3 @@ footer li{
   display:inline-block;
   padding:0 10px;
 }
-
-/* !!! Do we want social media links? */
-/*footer a.social {
-  display: block;
-  width: 46px;
-  height: 46px;
-  overflow: hidden;
-  background: transparent url("../assets/icons_social-media.png") 0 0 no-repeat;
-}
-
-/*Shift shared image*/
-#facebook {
-    background-position: 0 -46px;
-}
-
-#mail {
-    background-position: 0 -92px;
-}
-
-#instagram {
-    background-position: 0 -138px;
-}*/

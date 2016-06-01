@@ -37,13 +37,17 @@
 
 <!-- Display drafted messages -->
 <section id="drafts">   
-  <h1>Drafts</h1>
-  <!--drafts to go here-->
-  <p>example draft</p>
+  <h2>Drafts</h1>
+  <ul>
+    <% @drafts.each do |draft| %>
+      <li><%= draft.message %></li>
+    <% end %>
+  </ul>
 </section>
 
 <!-- Display sent capsules -->
 <section id="sent">
+  <h2>Sent</h1>
   <ul>
     <% @sent_messages.each do |sent_message| %>
       <li><%= sent_message %></li>

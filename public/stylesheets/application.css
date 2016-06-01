@@ -1,3 +1,7 @@
+#add_capsules {
+  margin-bottom: 1em;
+}
+
 #dispenser{
   display:block;
   background-color: #f1f1f1;
@@ -5,20 +9,36 @@
   color:#474141;
 }
 
-#dispenser h2{
-  font-weight:400;
-  font-size: 20px;
-  margin:0;
-}
-
-#drafts h1 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
 #drafts{
   background-color: #EC92FF;
   text-align: center;
   color:#fff;
   padding-top:50px;
+}
+
+#sent {
+  display:block;
+  background-color: #f1f1f1;
+  text-align: center;
+  color:#474141;
+}
+
+.bang_emphasis {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.bang_emphasis > i {
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFF;
+}
+
+#splash_love > i {
+  background: lightcoral;
+}
+
+#splash_busy > i {
+  font-style: bold;
+  background: #0099CC;
 }

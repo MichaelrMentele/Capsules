@@ -23,26 +23,24 @@
     </div> 
   </header>
 
-  <div>
-    <main>
-      <div class="flash">
-        <!-- Display flash messages -->
-        <% if session[:error] %>
-          <div class="error">
-            <p><%= session.delete(:error) %></p>
-          </div>
-        <% end %>
-        <% if session[:success] %>
-          <div class="success">
-            <p><%= session.delete(:success) %></p>
-          </div>
-        <% end %>
-      </div>
+  <main>
+    <div class="flash">
+      <!-- Display flash messages -->
+      <% if session[:error] %>
+        <div class="error">
+          <p><%= session.delete(:error) %></p>
+        </div>
+      <% end %>
+      <% if session[:success] %>
+        <div class="success">
+          <p><%= session.delete(:success) %></p>
+        </div>
+      <% end %>
+    </div>
 
-      <!-- Yield to specific page content -->
-      <%= yield %>
-    </main>
-  </div>
+    <!-- Yield to specific page content -->
+    <%= yield %>
+  </main>
   <script type="text/javascript" src="javascripts/ui.js"></script>
 </body>
 <footer>
