@@ -13,9 +13,6 @@ configure do
 end
 
 before do
-  session[:capsules] ||= []
-  session[:sent] ||= []
-
   # !!! NEEDS ENCRPYTION ADD TO MODELS AND DB
   # Load Twilio account auth info
   account_info = YAML.load_file("data/twilio_auth.yaml")
@@ -82,19 +79,20 @@ end
 # GETs #
 ########
 
-# !!! Needs styling
 # Render Splash
 get "/splash" do
-   erb :splash, layout: :layout_no_auth
+  if logged_in?
+    erb :splash, layout: :layout_auth_other
+  else
+    erb :splash, layout: :layout_no_auth
+  end
 end  
 
-# !!! Needs styling
 # Render Login page
 get "/login" do 
   erb :login, layout: :layout_no_auth
 end
 
-# !!! Needs styling
 # Render Registration page
 get "/register" do 
   @users = User.all
@@ -121,7 +119,7 @@ end
 # Render Setting page
 get "/settings" do 
   if logged_in?
-    erb :settings, layout: :layout
+    erb :settings, layout: :layout_auth_other
   else
     please_login
   end
