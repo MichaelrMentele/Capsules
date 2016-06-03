@@ -5,3 +5,9 @@ Remember that whenEVER a message is sent you are getting another one.
 Center bottom nav
 
 Should have a giant pink button to initiate dispensing
+
+Add register bottom to first part of the about page
+
+Add contact page to website
+
+Add random-messaging functionality. Right now it doesn't do it!!

@@ -115,7 +115,6 @@ get "/" do
   end
 end
 
-# !!!
 # Render Setting page
 get "/settings" do 
   if logged_in?
