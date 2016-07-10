@@ -1,6 +1,8 @@
 # Capsules
 A simple text message batcher to automatically sprinkle a little bit of love on someone's day.
 
+![preview](https://github.com/MichaelrMentele/Capsules/blob/master/public/assets/logo-header-darkpink.png)
+
 ## Who
 Capsules is for couples who are working professionals or are simply obsessed with productivity.
 
